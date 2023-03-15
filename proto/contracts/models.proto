@@ -1,0 +1,38 @@
+// [START declaration]
+syntax = 'proto3';
+package gettingStarted;
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/struct.proto";
+import "proto/custom/annotations.proto";
+
+option go_package = "techunicorn.com/udc-core/gettingStarted/pkg/domain/contracts";
+
+// [START common]
+message UserContext {
+  string userType = 1;
+  string id = 2;
+  repeated string role = 3;
+  repeated string features = 4;
+}
+// [END common]
+
+/* message Event { */
+/*   uint64 id = 1; */
+/*   optional string sagaId = 2; */
+/*   string stream = 3; */
+/*   string streamId = 4; */
+/*   uint64 version = 5; */
+/*   string event = 6; */
+/*   google.protobuf.Timestamp eventTime = 7; */
+/* } */
+
+// - Queries
+message HealthQuery {
+  UserContext userContext = 1;
+}
+
+
+// - Others
+message EmptyResponse {
+}

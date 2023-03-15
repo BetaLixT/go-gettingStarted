@@ -1,0 +1,6 @@
+syntax = "proto3";
+package data;
+
+
+option go_package = "pkg/infra/impls/evcqrs/entities";
+import "google/protobuf/struct.proto";

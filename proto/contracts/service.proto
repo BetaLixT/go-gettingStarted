@@ -1,0 +1,23 @@
+// [START declaration]
+syntax = 'proto3';
+package gettingStarted;
+
+import "proto/contracts/models.proto";
+import "proto/custom/annotations.proto";
+
+option go_package = "pkg/app/server/contracts";
+
+
+// [START health domain]
+service Healthz {
+
+  // Query for existing tasks
+  rpc GetHealthStatus(HealthQuery) returns (EmptyResponse) {
+    option (custom.documentation) = {
+      description: "responds success if application running",
+      summary: "health check",
+      tags: ["private", "health"]
+    };
+  };
+}
+// [END tasks domain]
