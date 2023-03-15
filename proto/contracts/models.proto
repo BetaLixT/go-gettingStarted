@@ -12,7 +12,7 @@ option go_package = "techunicorn.com/udc-core/gettingStarted/pkg/domain/contract
 message UserContext {
   string userType = 1;
   string id = 2;
-  repeated string role = 3;
+  repeated string roles = 3;
   repeated string features = 4;
 }
 // [END common]
